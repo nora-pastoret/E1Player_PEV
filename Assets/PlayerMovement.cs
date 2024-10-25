@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     CharacterController _characterController;
     InputControlers _inputs;
     GroundChecker _groundChecker;
+
+    public Rigidbody RigB;
 
     public float Speed = 1;
 
