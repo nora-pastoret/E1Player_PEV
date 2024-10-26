@@ -33,7 +33,7 @@ public class InputControlers : MonoBehaviour
     {
         _run = input.isPressed;
 
-        //if (input.triggered)
+        //if (input.isPressed)
         //{
         //    _run = true;
         //}
