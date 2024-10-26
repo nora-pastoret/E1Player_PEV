@@ -29,14 +29,13 @@ public class InputControlers : MonoBehaviour
         _jump = true;
     }
 
-    private void OnRun()
+    private void OnRun(InputValue input)
     {
-        _run = true;
+        _run = input.isPressed
     }
 
     private void LateUpdate()//preguntar
     {
         _jump = false;
-        _run = false;
     }
 }
