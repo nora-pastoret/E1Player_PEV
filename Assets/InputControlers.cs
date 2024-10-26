@@ -29,14 +29,25 @@ public class InputControlers : MonoBehaviour
         _jump = true;
     }
 
-  
     private void OnRun(InputValue input)
     {
         _run = input.isPressed;
+
+        //if (input.triggered)
+        //{
+        //    _run = true;
+        //}
+        //else
+        //{
+
+        //    _run = false;
+        //}
+        //_run = true;
     }
 
     private void LateUpdate()//preguntar
     {
         _jump = false;
+        //_run = false;
     }
 }
