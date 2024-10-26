@@ -72,9 +72,11 @@ public class PlayerMovement : MonoBehaviour
         if (direction.magnitude > 0)
         {
             Vector3 target = transform.position + direction;
-            Vector3 current = transform.position + transform.forward;
-            Vector3 look = Vector3.Lerp(current, target, TurnSpeed * Time.deltaTime);
-            transform.LookAt(target);
+            //Vector3 current = transform.position + transform.forward;
+            //Vector3 look = Vector3.Lerp(current, target, TurnSpeed * Time.deltaTime);
+            //transform.LookAt(target);
+            Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurnSpeed * Time.deltaTime);
         }
         _lastVelocity = velocity;
     }
