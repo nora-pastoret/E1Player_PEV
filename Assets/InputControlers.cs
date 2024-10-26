@@ -6,13 +6,15 @@ using UnityEngine.InputSystem;
 public class InputControlers : MonoBehaviour
 {
     private Vector2 _move;
-
     public Vector2 Move => _move;
 
     private bool _jump;
     public bool Jump => _jump;
 
-   
+    private bool _run;
+    public bool Run => _run;
+
+
     public Vector2 GetMove()
     {
         return _move;
@@ -27,8 +29,14 @@ public class InputControlers : MonoBehaviour
         _jump = true;
     }
 
+    private void OnRun()
+    {
+        _run = true;
+    }
+
     private void LateUpdate()//preguntar
     {
         _jump = false;
+        _run = false;
     }
 }
