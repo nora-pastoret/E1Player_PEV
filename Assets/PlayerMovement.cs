@@ -58,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
         float smoothFactor = _groundChecker.Grounded ? 1 : AirControl * Time.deltaTime; //?=if, :=sino --> ESTÀ GROUNDED? SI SI, MOVE NRMAL, SINO FEM AIRCONTROL
 
-        float currentSpeed = _inputs.Run ? WalkSpeed * RunSpeed : WalkSpeed;
+        float currentSpeed = _inputs.Run ? RunSpeed : WalkSpeed;
+        //float currentSpeed = _inputs.Run ? WalkSpeed * RunSpeed : WalkSpeed;
 
         //Per fer un moviment uniformement accelerat
         velocity.x = Mathf.Lerp(_lastVelocity.x, direction.x * currentSpeed, smoothFactor);
