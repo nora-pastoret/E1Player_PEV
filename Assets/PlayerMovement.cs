@@ -48,10 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        //var localInput = transform.right * _inputs.Move.x + transform.forward * _inputs.Move.y;
-        //Vector3 direction = new Vector3(localInput.x, 0, localInput.z); //A y D giren el personatge
+        var localInput = transform.right * _inputs.Move.x + transform.forward * _inputs.Move.y;
+        Vector3 direction = new Vector3(localInput.x, 0, localInput.z); //A y D giren el personatge
 
-        Vector3 direction = new Vector3(_inputs.Move.x, 0, _inputs.Move.y); //A y D avancen dreta i esquerra
+        //Vector3 direction = new Vector3(_inputs.Move.x, 0, _inputs.Move.y); //A y D avancen dreta i esquerra
         Vector3 velocity = new Vector3();
 
         float smoothFactor = _groundChecker.Grounded ? 1 : AirControl * Time.deltaTime; //?=if, :=sino --> ESTÀ GROUNDED? SI SI, MOVE NRMAL, SINO FEM AIRCONTROL
@@ -72,8 +72,8 @@ public class PlayerMovement : MonoBehaviour
         if (direction.magnitude > 0)
         {
             Vector3 target = transform.position + direction;
-            //Vector3 current = transform.position + transform.forward;
-            //Vector3 look = Vector3.Lerp(current, target, TurnSpeed * Time.deltaTime);
+            Vector3 current = transform.position + transform.forward;
+            Vector3 look = Vector3.Lerp(current, target, TurnSpeed * Time.deltaTime);
             transform.LookAt(target);
         }
         _lastVelocity = velocity;
