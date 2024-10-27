@@ -1096,7 +1096,7 @@ MonoBehaviour:
   AirControl: 0.1
   TurnSpeed: 5
   RunSpeed: 30
-  doorAnimator: {fileID: 0}
+  doorAnimator: {fileID: 1130901818}
   key_collected: 0
 --- !u!114 &753064969
 MonoBehaviour:
