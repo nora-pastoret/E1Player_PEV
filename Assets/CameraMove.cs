@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CameraAnimator : MonoBehaviour
+public class CameraMove : MonoBehaviour
 {
     InputControlers _inputs;
     Animator anim;
