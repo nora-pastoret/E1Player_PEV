@@ -41,10 +41,11 @@ public class InputControlers : MonoBehaviour
         _zoom = input.isPressed;
     }
 
-    private void Update()
+    private void OnRun(InputValue input)
     {
         // Actualiza _run en cada frame según el estado de la tecla de correr (Shift)
-        _runstart = Keyboard.current.shiftKey.isPressed;
+        //_runstart = Keyboard.current.shiftKey.isPressed;
+        _runstart = input.isPressed;
     }
 
 
