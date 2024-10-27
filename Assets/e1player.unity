@@ -990,6 +990,10 @@ MonoBehaviour:
   AirControl: 0.1
   TurnSpeed: 5
   RunSpeed: 30
+  doorAnimator: {fileID: 0}
+  key_doorAnimator: {fileID: 0}
+  key_collected: 0
+  player_near: 0
 --- !u!114 &753064969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1551,7 +1555,7 @@ GameObject:
   - component: {fileID: 1321839351}
   m_Layer: 0
   m_Name: 1a Persona
-  m_TagString: Cam1a
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
