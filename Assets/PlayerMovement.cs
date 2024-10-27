@@ -16,13 +16,22 @@ public class PlayerMovement : MonoBehaviour
     public float WalkSpeed = 5;
 
     public float JumpSpeed = 10;
-    public float AirControl = 0.1f; //Perquè hi hagi fricció (que costi moure's a l'aire quan està saltant)
+    public float AirControl = 0.1f; //Perqu? hi hagi fricci? (que costi moure's a l'aire quan est? saltant)
 
     public float TurnSpeed = 1;
 
     public float RunSpeed = 30; // Multiplicador de velocidad al correr
 
-    private Vector3 _lastVelocity; //Per la gravetat, perquè hi hagi acceleració i variar la velocitat
+    private Vector3 _lastVelocity; //Per la gravetat, perqu? hi hagi acceleraci? i variar la velocitat
+
+
+    public Animator doorAnimator;
+    public bool key_collected;
+
+    void Awake()
+    {
+        key_collected = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         //Vector3 direction = new Vector3(_inputs.Move.x, 0, _inputs.Move.y); //A y D avancen dreta i esquerra
         Vector3 velocity = new Vector3();
 
-        float smoothFactor = _groundChecker.Grounded ? 1 : AirControl * Time.deltaTime; //?=if, :=sino --> ESTÀ GROUNDED? SI SI, MOVE NRMAL, SINO FEM AIRCONTROL
+        float smoothFactor = _groundChecker.Grounded ? 1 : AirControl * Time.deltaTime; //?=if, :=sino --> EST? GROUNDED? SI SI, MOVE NRMAL, SINO FEM AIRCONTROL
 
         float currentSpeed = _inputs.RunStart ? RunSpeed : WalkSpeed;
    
@@ -74,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
         _characterController.Move(velocity * Time.deltaTime);
 
-        //Turn QUE QUAN CANVIIS DE DIRECCIÓ EL PERSONATGE GIRI/ROTI
+        //Turn QUE QUAN CANVIIS DE DIRECCI? EL PERSONATGE GIRI/ROTI
         if (direction.magnitude > 0)
         {
             Vector3 target = transform.position + direction;
@@ -90,5 +99,16 @@ public class PlayerMovement : MonoBehaviour
     private float GetGravity()
     {
         return _lastVelocity.y + Physics.gravity.y * Time.deltaTime;
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "DoorCollider")
+        {
+            key_collected = true;
+            doorAnimator.SetTrigger("key_collected");
+        }
     }
 }
