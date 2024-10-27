@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.tag == "DoorCollider")
         {
             key_collected = true;
-            doorAnimator.SetTrigger("key_collected");
+            doorAnimator.SetBool("key_collected", key_collected);
         }
     }
 }
