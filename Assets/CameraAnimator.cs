@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraAnimator : MonoBehaviour
 {
-    //InputControlers _inputs;
+    InputControlers _inputs;
 
     Animator anim;
 
@@ -13,19 +14,20 @@ public class CameraAnimator : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        //_inputs = GetComponent<InputControlers>();
+        _inputs = GetComponent<InputControlers>();
     }
 
 
-    private void Zoom()
+    private void Zoom(bool isZooming)
     {
-        anim.SetTrigger("ZoomIn");
-
+        anim.SetBool("Zoommed", isZooming);
+        
     }
 
     private bool ShouldZoom()
     {
-        return Input.GetKeyDown(KeyCode.Z);
+        //return Input.GetKeyDown(KeyCode.Z);
+        return _inputs.Zoom;
         //_runstart = Keyboard.current.shiftKey.isPressed;
     }
 
