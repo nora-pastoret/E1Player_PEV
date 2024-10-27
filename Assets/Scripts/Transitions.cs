@@ -14,22 +14,26 @@ public class Transitions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w"))
+        //if (Input.GetKey("w"))
+        //{
+        //    anim.SetBool("move", true);
+        //}
+        if(Input.GetKey(KeyCode.UpArrow)|| Input.GetKey("w"))
         {
             anim.SetBool("move", true);
         }
-        if (!Input.GetKey("w"))
+        else
         {
             anim.SetBool("move", false);
         }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            anim.SetBool("move", true);
-        }
-        if (!Input.GetKey(KeyCode.UpArrow))
-        {
-            anim.SetBool("move", false);
-        }
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    anim.SetBool("move", true);
+        //}
+        //if (!Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    anim.SetBool("move", false);
+        //}
         if (Input.GetKey(KeyCode.LeftShift))
         {
             anim.SetBool("running", true);
