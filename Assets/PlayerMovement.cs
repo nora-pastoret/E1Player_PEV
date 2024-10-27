@@ -26,11 +26,14 @@ public class PlayerMovement : MonoBehaviour
 
 
     public Animator doorAnimator;
+    public Animator key_doorAnimator;
     public bool key_collected;
+    public bool player_near;
 
     void Awake()
     {
         key_collected = false;
+        player_near = false;
     }
 
     // Start is called before the first frame update
@@ -107,8 +110,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.tag == "DoorCollider")
         {
+            player_near = true;
+            doorAnimator.SetBool("player_near", player_near);
+        }
+
+        else if (other.gameObject.tag == "KeyDoorCollider")
+        {
             key_collected = true;
-            doorAnimator.SetBool("key_collected", key_collected);
+            key_doorAnimator.SetBool("key_collected", key_collected);
         }
     }
 }

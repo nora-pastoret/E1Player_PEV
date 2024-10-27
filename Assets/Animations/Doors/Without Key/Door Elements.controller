@@ -36,7 +36,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: key_collected
+    m_ConditionEvent: player_near
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1440609072706853976}
@@ -87,7 +87,7 @@ AnimatorController:
   m_Name: Door Elements
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: key_collected
+  - m_Name: player_near
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
