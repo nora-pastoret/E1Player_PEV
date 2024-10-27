@@ -24,12 +24,21 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Run",
+                    "name": "RunStart",
                     "type": "Button",
                     "id": "77e92021-486d-45c4-80c3-9b37e53caf2f",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RunEnd",
+                    "type": "Button",
+                    "id": "fe01a015-3b95-433b-9577-de1914715f16",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -181,10 +190,10 @@
                     "name": "",
                     "id": "79c345ca-091b-4d87-9e03-51abed7c710d",
                     "path": "<Keyboard>/shift",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Teclat",
-                    "action": "Run",
+                    "action": "RunStart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -195,7 +204,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "GamePad",
-                    "action": "Run",
+                    "action": "RunStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6c974c1-7cf0-40e1-af35-995adb822072",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunEnd",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

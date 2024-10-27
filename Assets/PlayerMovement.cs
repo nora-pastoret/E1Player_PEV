@@ -13,14 +13,14 @@ public class PlayerMovement : MonoBehaviour
 
     //public Rigidbody RigB;
 
-    public float WalkSpeed = 10;
+    public float WalkSpeed = 5;
 
     public float JumpSpeed = 10;
     public float AirControl = 0.1f; //Perquè hi hagi fricció (que costi moure's a l'aire quan està saltant)
 
     public float TurnSpeed = 1;
 
-    public float RunSpeed = 20; // Multiplicador de velocidad al correr
+    public float RunSpeed = 30; // Multiplicador de velocidad al correr
 
     private Vector3 _lastVelocity; //Per la gravetat, perquè hi hagi acceleració i variar la velocitat
 
@@ -58,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
         float smoothFactor = _groundChecker.Grounded ? 1 : AirControl * Time.deltaTime; //?=if, :=sino --> ESTÀ GROUNDED? SI SI, MOVE NRMAL, SINO FEM AIRCONTROL
 
-        float currentSpeed = _inputs.Run ? RunSpeed : WalkSpeed;
+        float currentSpeed = _inputs.RunStart ? RunSpeed : WalkSpeed;
+   
         //float currentSpeed = _inputs.Run ? WalkSpeed * RunSpeed : WalkSpeed;
 
         //Per fer un moviment uniformement accelerat
