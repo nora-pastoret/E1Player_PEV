@@ -154,7 +154,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -6.73, y: 2.42, z: 7.38}
+  m_ConnectedAnchor: {x: 5.38, y: 1.8, z: 7.38}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -2308,7 +2308,7 @@ GameObject:
   - component: {fileID: 2085296383}
   - component: {fileID: 2085296382}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Pendol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
