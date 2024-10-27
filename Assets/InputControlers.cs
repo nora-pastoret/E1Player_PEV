@@ -36,9 +36,21 @@ public class InputControlers : MonoBehaviour
         _jump = true;
     }
 
-    private void OnZoom()
+    private void OnZoom(InputValue input)
     {
-        _zoom = true;
+        _zoom = input.isPressed;
+    }
+
+    private void Update()
+    {
+        // Actualiza _run en cada frame según el estado de la tecla de correr (Shift)
+        _runstart = Keyboard.current.shiftKey.isPressed;
+    }
+
+
+    private void LateUpdate()//preguntar
+    {
+        _jump = false;
     }
 
     //controls = new GameControls();
@@ -88,16 +100,5 @@ public class InputControlers : MonoBehaviour
     //    return running;
     //}
 
-    private void Update()
-    {
-        // Actualiza _run en cada frame según el estado de la tecla de correr (Shift)
-        _runstart = Keyboard.current.shiftKey.isPressed;
-    }
 
-
-    private void LateUpdate()//preguntar
-    {
-        _jump = false;
-        _zoom = false;
-    }
 }

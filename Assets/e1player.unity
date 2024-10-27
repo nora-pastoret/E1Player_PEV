@@ -1547,9 +1547,11 @@ GameObject:
   - component: {fileID: 1321839345}
   - component: {fileID: 1321839348}
   - component: {fileID: 1321839349}
+  - component: {fileID: 1321839350}
+  - component: {fileID: 1321839351}
   m_Layer: 0
   m_Name: 1a Persona
-  m_TagString: MainCamera
+  m_TagString: Cam1a
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1679,6 +1681,30 @@ MonoBehaviour:
   m_DefaultActionMap: Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1321839350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321839344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc6b99d1781bba4f931fba53c750590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1321839351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321839344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7190f18b514fa0446bb8e9665cb807f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1332547947
 GameObject:
   m_ObjectHideFlags: 0
