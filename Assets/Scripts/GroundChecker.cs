@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroundChecker : MonoBehaviour
 {
     public float Radius = 0.15f;
-    public LayerMask NewGround; //Quan hi ha una mask perquè no xafi la mask (que es quedi uns milimetres per sobre del terra el personatge) DEDUCCIÓ!!!!!!!
+    public LayerMask NewGround;
 
     private bool _grounded;
     public bool Grounded => _grounded;

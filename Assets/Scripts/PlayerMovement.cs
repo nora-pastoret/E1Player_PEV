@@ -11,18 +11,17 @@ public class PlayerMovement : MonoBehaviour
     InputControlers _inputs;
     GroundChecker _groundChecker;
 
-    //public Rigidbody RigB;
 
     public float WalkSpeed = 5;
 
     public float JumpSpeed = 10;
-    public float AirControl = 0.1f; //Perqu? hi hagi fricci? (que costi moure's a l'aire quan est? saltant)
+    public float AirControl = 0.1f;
 
     public float TurnSpeed = 1;
 
-    public float RunSpeed = 30; // Multiplicador de velocidad al correr
+    public float RunSpeed = 30;
 
-    private Vector3 _lastVelocity; //Per la gravetat, perqu? hi hagi acceleraci? i variar la velocitat
+    private Vector3 _lastVelocity;
 
 
     public Animator doorAnimator;
@@ -65,16 +64,13 @@ public class PlayerMovement : MonoBehaviour
         var localInput = transform.right * _inputs.Move.x + transform.forward * _inputs.Move.y;
         Vector3 direction = new Vector3(localInput.x, 0, localInput.z); //A y D giren el personatge
 
-        //Vector3 direction = new Vector3(_inputs.Move.x, 0, _inputs.Move.y); //A y D avancen dreta i esquerra
         Vector3 velocity = new Vector3();
 
-        float smoothFactor = _groundChecker.Grounded ? 1 : AirControl * Time.deltaTime; //?=if, :=sino --> EST? GROUNDED? SI SI, MOVE NRMAL, SINO FEM AIRCONTROL
+        float smoothFactor = _groundChecker.Grounded ? 1 : AirControl * Time.deltaTime;
 
         float currentSpeed = _inputs.RunStart ? RunSpeed : WalkSpeed;
    
-        //float currentSpeed = _inputs.Run ? WalkSpeed * RunSpeed : WalkSpeed;
 
-        //Per fer un moviment uniformement accelerat
         velocity.x = Mathf.Lerp(_lastVelocity.x, direction.x * currentSpeed, smoothFactor);
         velocity.y = _lastVelocity.y;
         velocity.z = Mathf.Lerp(_lastVelocity.z, direction.z * currentSpeed, smoothFactor);
@@ -86,13 +82,11 @@ public class PlayerMovement : MonoBehaviour
 
         _characterController.Move(velocity * Time.deltaTime);
 
-        //Turn QUE QUAN CANVIIS DE DIRECCI? EL PERSONATGE GIRI/ROTI
+
         if (direction.magnitude > 0)
         {
             Vector3 target = transform.position + direction;
-            //Vector3 current = transform.position + transform.forward;
-            //Vector3 look = Vector3.Lerp(current, target, TurnSpeed * Time.deltaTime);
-            //transform.LookAt(target);
+
             Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurnSpeed * Time.deltaTime);
         }

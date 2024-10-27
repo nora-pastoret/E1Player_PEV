@@ -11,7 +11,7 @@ public class Water : MonoBehaviour
         var slower = other.GetComponent<Slower>();
         if (slower != null)
         {
-            slower.SlowDown(Density); // Activa la ralentización
+            slower.SlowDown(Density);
         }
     }
 
@@ -20,7 +20,7 @@ public class Water : MonoBehaviour
         var slower = other.GetComponent<Slower>();
         if (slower != null)
         {
-            slower.Reset(); // Restaura la velocidad al salir del agua
+            slower.Reset();
         }
     }
 }

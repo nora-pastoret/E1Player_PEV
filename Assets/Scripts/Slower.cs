@@ -8,13 +8,12 @@ public class Slower : MonoBehaviour
     private float _originalWalkSpeed;
     private float _originalRunSpeed;
 
-    public float WaterSpeedMultiplier = 0.5f; // Multiplicador para reducir la velocidad en agua
+    public float WaterSpeedMultiplier = 0.5f;
 
     void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
 
-        // Guardamos las velocidades originales
         if (_playerMovement != null)
         {
             _originalWalkSpeed = _playerMovement.WalkSpeed;
@@ -26,7 +25,6 @@ public class Slower : MonoBehaviour
     {
         if (_playerMovement != null)
         {
-            // Ajusta las velocidades según el multiplicador de agua
             _playerMovement.WalkSpeed = _originalWalkSpeed * WaterSpeedMultiplier;
             _playerMovement.RunSpeed = _originalRunSpeed * WaterSpeedMultiplier;
         }
@@ -36,7 +34,6 @@ public class Slower : MonoBehaviour
     {
         if (_playerMovement != null)
         {
-            // Restaura las velocidades originales
             _playerMovement.WalkSpeed = _originalWalkSpeed;
             _playerMovement.RunSpeed = _originalRunSpeed;
         }
