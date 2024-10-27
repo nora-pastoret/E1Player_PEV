@@ -14,6 +14,9 @@ public class InputControlers : MonoBehaviour
     private bool _runstart;
     public bool RunStart => _runstart;
 
+    private bool _zoom;
+    public bool Zoom => _zoom;
+
     //private bool _runend;
     //public bool RunEnd => _runend;
 
@@ -31,6 +34,11 @@ public class InputControlers : MonoBehaviour
     private void OnJump()
     {
         _jump = true;
+    }
+
+    private void OnZoom()
+    {
+        _zoom = true;
     }
 
     //controls = new GameControls();
@@ -90,6 +98,6 @@ public class InputControlers : MonoBehaviour
     private void LateUpdate()//preguntar
     {
         _jump = false;
-
+        _zoom = false;
     }
 }
