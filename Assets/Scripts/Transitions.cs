@@ -22,11 +22,11 @@ public class Transitions : MonoBehaviour
         {
             anim.SetBool("move", false);
         }
-        if (Input.GetKey("shift"))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             anim.SetBool("running", true);
         }
-        if (!Input.GetKey("shift"))
+        if (!Input.GetKey(KeyCode.LeftShift))
         {
             anim.SetBool("running", false);
         }
